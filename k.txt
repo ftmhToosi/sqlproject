@@ -1,0 +1,29 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int vowelcntou(string);
+int main()
+{
+	string s;
+	cout<<"enter your sentence: ";
+	getline(cin, s);
+	cout<<"number of vowels in string: "<<vowelcntou(s);
+	return 0;
+}
+int vowelcntou(string s)
+{
+	int count=0 , k=0;
+	string vowels[10]={ "a","o","u","i","e","A","O","U","I","E"};
+	for (int i = 0; i<10; i++)
+		{
+			while(true)
+			{
+			k=s.find(vowels[i]);
+			if(k==-1)
+			break;
+			s.replace(k,1," ");
+			count++;
+		    }
+		}
+	return count;
+}
